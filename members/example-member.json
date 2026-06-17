@@ -1,0 +1,7 @@
+{
+  "name": "Example Member",
+  "year": "Freshman",
+  "major": "Computer Science",
+  "interests": ["web development", "design", "social impact"],
+  "bio": "I joined CS4Good because I want to build useful tools for real community partners."
+}

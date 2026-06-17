@@ -1,0 +1,294 @@
+:root {
+  /* Shared black-on-white terminal values make the design easy to tweak later. */
+  --background: #ffffff;
+  --surface: #f7f7f7;
+  --surface-soft: #eeeeee;
+  --text: #050505;
+  --muted: #4f4f4f;
+  --faint: #777777;
+  --border: #050505;
+  --border-soft: #9a9a9a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  line-height: 1.6;
+}
+
+.site-header {
+  border-bottom: 2px solid var(--border);
+  background: var(--background);
+}
+
+.header-content {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 40px 0 52px;
+}
+
+.logo-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 36px;
+  padding-bottom: 28px;
+  border-bottom: 1px dashed var(--border-soft);
+}
+
+.logo {
+  display: block;
+  max-width: 100%;
+  opacity: 1;
+}
+
+.logo-wide {
+  width: clamp(150px, 26vw, 260px);
+}
+
+.logo-mark {
+  width: clamp(92px, 14vw, 145px);
+}
+
+.terminal-line,
+.terminal-label {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.terminal-line {
+  margin: 0 0 18px;
+}
+
+.terminal-line::before,
+.terminal-label::before {
+  color: var(--text);
+  content: "> ";
+}
+
+.terminal-label {
+  margin: 0 0 10px;
+  text-transform: lowercase;
+}
+
+h1,
+h2,
+p {
+  overflow-wrap: break-word;
+}
+
+h1 {
+  max-width: 900px;
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(2.4rem, 8vw, 5rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  max-width: 620px;
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 2.4vw, 1.25rem);
+}
+
+main {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 44px 0 64px;
+}
+
+section + section {
+  margin-top: 52px;
+}
+
+.section-heading {
+  max-width: 680px;
+  margin-bottom: 22px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 4vw, 2.35rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.workflow-list {
+  /* The steps become two columns on tablets and one column on phones. */
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: workflow;
+}
+
+.workflow-list li {
+  min-height: 156px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  background: var(--background);
+  color: var(--text);
+  font-size: 0.96rem;
+  font-weight: 600;
+}
+
+.workflow-list li::before {
+  display: grid;
+  width: 38px;
+  height: 32px;
+  margin-bottom: 22px;
+  border: 1px solid var(--border);
+  background: var(--text);
+  color: var(--background);
+  content: "0" counter(workflow);
+  counter-increment: workflow;
+  font-size: 0.9rem;
+  font-weight: 900;
+  place-items: center;
+}
+
+code {
+  border: 1px solid var(--border-soft);
+  background: var(--surface-soft);
+  color: var(--text);
+  font-size: 0.92em;
+  padding: 0.08em 0.3em;
+}
+
+.status-message {
+  margin: 8px 0 24px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  background: var(--background);
+  color: var(--muted);
+}
+
+.status-message:empty {
+  display: none;
+}
+
+.status-message.error {
+  border-color: var(--text);
+  background: var(--text);
+  color: var(--background);
+}
+
+.member-grid {
+  /* Cards automatically stay even and readable across screen sizes. */
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.member-card {
+  display: flex;
+  min-height: 310px;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid var(--border);
+  background: var(--background);
+}
+
+.member-card::before {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--faint);
+  content: "cat member.json";
+  font-size: 0.82rem;
+}
+
+.member-card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.member-meta {
+  margin: 8px 0 18px;
+  color: var(--muted);
+  font-size: 0.94rem;
+  font-weight: 600;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.tag {
+  border: 1px solid var(--border-soft);
+  background: var(--surface-soft);
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 8px;
+}
+
+.tag::before {
+  content: "#";
+}
+
+.member-bio {
+  margin: 0;
+  color: var(--muted);
+}
+
+.site-footer {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 40px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.site-footer span {
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .workflow-list,
+  .member-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .header-content {
+    padding: 32px 0 40px;
+  }
+
+  .logo-strip {
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 30px;
+  }
+
+  main {
+    padding-top: 36px;
+  }
+
+  .workflow-list,
+  .member-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow-list li {
+    min-height: auto;
+  }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CS4Good Member Wall</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-content">
+        <div class="logo-strip" aria-label="CS4Good logos">
+          <img
+            src="assets/cs4good-logo.png"
+            alt="CS4Good logo"
+            class="logo logo-wide"
+          />
+          <img
+            src="assets/nd-cs4good-monogram.png"
+            alt="Notre Dame CS4Good monogram"
+            class="logo logo-mark"
+          />
+        </div>
+
+        <p class="terminal-line">kirby@cs4good:~/member-wall$ ./onboard.sh</p>
+        <h1>CS4Good Member Wall</h1>
+        <p class="subtitle">
+          Make your first pull request and see yourself live on the site.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <!-- This section explains the GitHub contribution workflow for new members. -->
+      <section class="workflow-section" aria-labelledby="workflow-title">
+        <div class="section-heading">
+          <p class="terminal-label">README.md</p>
+          <h2 id="workflow-title">Add yourself in five small steps</h2>
+        </div>
+
+        <ol class="workflow-list">
+          <li>Fork or edit the repo</li>
+          <li>Add your JSON file to <code>/members</code></li>
+          <li>Add your file path to <code>members.json</code></li>
+          <li>Open a pull request</li>
+          <li>After it is merged, your card appears here</li>
+        </ol>
+      </section>
+
+      <!-- JavaScript fills this section with cards from the JSON files. -->
+      <section class="members-section" aria-labelledby="members-title">
+        <div class="section-heading">
+          <p class="terminal-label">members/</p>
+          <h2 id="members-title">Meet the club</h2>
+        </div>
+
+        <div id="status-message" class="status-message" role="status">
+          Loading members...
+        </div>
+
+        <div id="member-grid" class="member-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>&gt;</span> Built with plain HTML, CSS, and JavaScript for CS4Good contributors.
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
