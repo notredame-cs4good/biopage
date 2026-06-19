@@ -19,42 +19,22 @@ This site is publicly visible. Only add information and images you are comfortab
 
 ## Add Yourself
 
-Use this workflow if you have access to the repo.
+By the end, your card will show up on the member wall. Scroll down on the website to see an example member card.
 
 If you are less familiar with Git and GitHub, our incredible Project Coordinator Joey Salatino put together this doc: https://docs.google.com/document/d/1ApBC1iMaxuCOyqeUY_7LNmfz7u80YzHpO3MiB-Jmw2Q/edit?usp=sharing
 
-1. Create a GitHub account if you do not already have one.
-2. Send your GitHub username in the `github-username-drop` channel so we can give you access to the repo.
-3. Wait until you have access.
-4. Sign in to GitHub.
-5. Open this repository.
-6. Click Code and copy the repo URL.
-7. Clone the repo on your computer:
+New to GitHub? Use Option 1. Already comfortable with Git? Use Option 2.
 
-```bash
-git clone REPO_URL_HERE
-cd REPO_FOLDER_HERE
-```
+Before you start, create a GitHub account if you do not already have one. Then send your GitHub username in the `github-username-drop` channel so we can give you access to the repo. If you do not have access to the Discord, email kbach@nd.edu.
 
-8. Create a new branch for your profile:
-
-```bash
-git checkout -b add-your-name
-```
-
-9. Copy `members/example-member.json` to a new file named with your name, like `members/jane-doe.json`.
-10. Replace the example values with your own information.
-11. Optional: add a square or landscape profile image to the `assets/` folder.
-12. If you added an image, put the image path in your JSON, like `assets/jane-doe.jpg`.
-
-Use this format:
+Use this profile format:
 
 ```json
 {
   "name": "Example Member",
   "year": "Freshman",
   "major": "Computer Science",
-  "image": "assets/nd-cs4good-monogram.png",
+  "image": "assets/stickfigureguy.jpg",
   "imageAlt": "Example Member profile image",
   "interests": ["web development", "design", "social impact"],
   "bio": "I joined CS4Good because I want to build useful tools for real community partners."
@@ -63,8 +43,64 @@ Use this format:
 
 The `image` and `imageAlt` fields are optional. If you add an image, commit the image file with your JSON file and use a relative path like `assets/jane-doe.jpg`.
 
-13. Open `members.json`.
-14. Add your new file path to the list.
+### Option 1: Edit on GitHub.com
+
+Best for the first meeting or anyone who does not have Git set up locally.
+
+1. Sign in to GitHub and open this repository.
+2. Open `members/example-member.json`.
+3. Copy the full contents of that file.
+4. Go back to the `members` folder.
+5. Use Add file > Create new file.
+6. Name the file with your name, like `members/jane-doe.json`.
+7. Paste the copied example into the new file.
+8. Replace the example values with your own information.
+9. Optional: upload a square or landscape profile image to the `assets/` folder.
+10. If you added an image, put the image path in your JSON, like `assets/jane-doe.jpg`.
+11. Open `members.json`.
+12. Add your new file path to the list. This registers your profile file so the website knows to display it.
+
+Example `members.json`:
+
+```json
+[
+  "members/example-member.json",
+  "members/jane-doe.json"
+]
+```
+
+Make sure every line except the last one ends with a comma.
+
+13. When GitHub asks how to save your changes, choose to create a new branch.
+14. Open a pull request from that branch.
+15. After the pull request is approved and merged, GitHub Pages will update the website.
+16. Scroll down to the member cards and confirm your profile appears.
+
+### Option 2: Clone the repo locally
+
+Best for people who already have Git set up or want the normal developer workflow.
+
+1. Sign in to GitHub and open this repository.
+2. Click Code and copy the repo URL.
+3. Clone the repo on your computer:
+
+```bash
+git clone REPO_URL_HERE
+cd REPO_FOLDER_HERE
+```
+
+4. Create a new branch for your profile:
+
+```bash
+git checkout -b add-your-name
+```
+
+5. Copy `members/example-member.json` to a new file named with your name, like `members/jane-doe.json`.
+6. Replace the example values with your own information.
+7. Optional: add a square or landscape profile image to the `assets/` folder.
+8. If you added an image, put the image path in your JSON, like `assets/jane-doe.jpg`.
+9. Open `members.json`.
+10. Add your new file path to the list. This registers your profile file so the website knows to display it.
 
 Example:
 
@@ -77,8 +113,7 @@ Example:
 
 Make sure every line except the last one ends with a comma.
 
-15. Save your files.
-16. Commit and push your branch:
+11. Commit and push your branch:
 
 ```bash
 git add .
@@ -86,11 +121,10 @@ git commit -m "Add Jane Doe profile"
 git push -u origin add-your-name
 ```
 
-17. Open GitHub. It should show a button to create a pull request from your branch.
-18. Open the pull request for review.
-19. After the pull request is approved and merged, your card will appear on the member wall.
-
-If you cannot clone the repo on your computer, you can still make the same changes through the GitHub website by using Add file and Edit file.
+12. Open GitHub. It should show a button to create a pull request from your branch.
+13. Open the pull request for review.
+14. After the pull request is approved and merged, GitHub Pages will update the website.
+15. Scroll down to the member cards and confirm your profile appears.
 
 ## Run Locally
 

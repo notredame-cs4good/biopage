@@ -25,6 +25,7 @@
         <h1>CS4Good Member Wall</h1>
         <p class="subtitle">
           Make your first pull request and see yourself live on the site.
+          By the end, your card will show up below. Scroll down to see an example.
         </p>
       </div>
     </header>
@@ -34,7 +35,10 @@
       <section class="workflow-section" aria-labelledby="workflow-title">
         <div class="section-heading">
           <p class="terminal-label">README.md</p>
-          <h2 id="workflow-title">Add yourself with GitHub</h2>
+          <h2 id="workflow-title">How to add your member card</h2>
+          <p class="section-note">
+            New to GitHub? Use the GitHub website path. Already comfortable with Git? You can clone the repo and work locally instead.
+          </p>
           <p class="section-note">
             This wall is PUBLIC. Only add profile details and images you are comfortable sharing online.
           </p>
@@ -44,30 +48,51 @@
           </p>
         </div>
 
+        <h3 class="workflow-option-title">Option 1: Edit on GitHub.com</h3>
         <ol class="workflow-list">
           <li>
-            <strong>Get access</strong>
-            <span>Make a GitHub account, then send your username in <code>github-username-drop</code> in the discord so we can add you. If you don't have access to the discord, email kbach@nd.edu</span>
+            <strong>Step 1: Make your profile</strong>
+            <span>Make a GitHub account and send your username in <code>github-username-drop</code>. Then open <code>members/example-member.json</code>, copy its contents, and create a new file in <code>members/</code> named after yourself.</span>
           </li>
           <li>
-            <strong>Make a branch</strong>
-            <span>After you have access, clone the repo and run <code>git checkout -b add-your-name</code>.</span>
+            <strong>Step 2: Fill out your info</strong>
+            <span>Edit your new JSON file with your name, major, interests, GitHub username, optional image, and anything else you are comfortable sharing publicly.</span>
           </li>
           <li>
-            <strong>Create your file</strong>
-            <span>Copy <code>members/example-member.json</code> to a new file like <code>members/jane-doe.json</code>.</span>
+            <strong>Step 3: Add yourself to the list</strong>
+            <span>Edit <code>members.json</code> and add your new file path. This registers your profile file so the website knows to display it.</span>
           </li>
           <li>
-            <strong>Edit your profile</strong>
-            <span>Update your JSON with your name, year, major, interests, bio, and optional image in <code>assets/</code>.</span>
+            <strong>Step 4: Open a pull request</strong>
+            <span>When GitHub asks how to save your changes, choose to create a new branch and open a pull request. Someone will review it before it goes live.</span>
           </li>
           <li>
-            <strong>Update the list</strong>
-            <span>Open <code>members.json</code> and add your new file path so the site knows your card exists.</span>
+            <strong>Step 5: See yourself live</strong>
+            <span>After your pull request is approved and merged, GitHub Pages updates and your card appears below. Scroll down to see an example member card.</span>
+          </li>
+        </ol>
+
+        <h3 class="workflow-option-title">Option 2: Clone the repo locally</h3>
+        <ol class="workflow-list">
+          <li>
+            <strong>Step 1: Clone the repository</strong>
+            <span>Clone the repo to your computer and open it in your code editor.</span>
           </li>
           <li>
-            <strong>Send it for review</strong>
-            <span>Commit, push your branch, and open a pull request. Your card appears after the PR is approved and merged.</span>
+            <strong>Step 2: Create a new branch</strong>
+            <span>Make a branch for your profile so your changes stay separate from the main website.</span>
+          </li>
+          <li>
+            <strong>Step 3: Make your profile file</strong>
+            <span>Copy <code>members/example-member.json</code> into a new file in <code>members/</code> and fill it out with your information.</span>
+          </li>
+          <li>
+            <strong>Step 4: Add yourself to the list</strong>
+            <span>Edit <code>members.json</code> and add your new file path. This registers your profile file so the website knows to display it.</span>
+          </li>
+          <li>
+            <strong>Step 5: Commit, push, and open a pull request</strong>
+            <span>Commit your changes, push your branch to GitHub, and open a pull request for review.</span>
           </li>
         </ol>
       </section>

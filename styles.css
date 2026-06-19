@@ -129,10 +129,17 @@ section + section {
   font-size: 0.95rem;
 }
 
+.workflow-option-title {
+  margin: 30px 0 14px;
+  font-size: clamp(1.1rem, 2.4vw, 1.35rem);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
 .workflow-list {
-  /* The steps become two columns on tablets and one column on phones. */
+  /* The steps collapse from a compact desktop grid to one column on phones. */
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 14px;
   margin: 0;
   padding: 0;
