@@ -1,0 +1,9 @@
+{
+  "name": "Example Member",
+  "year": "Freshman",
+  "major": "Computer Science",
+  "image": "assets/nd-cs4good-monogram.png",
+  "imageAlt": "Example Member profile image",
+  "interests": ["web development", "design", "social impact"],
+  "bio": "I joined CS4Good because I want to build useful tools for real community partners."
+}

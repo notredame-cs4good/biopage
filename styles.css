@@ -132,7 +132,7 @@ section + section {
 .workflow-list {
   /* The steps become two columns on tablets and one column on phones. */
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
   margin: 0;
   padding: 0;

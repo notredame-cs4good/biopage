@@ -34,15 +34,41 @@
       <section class="workflow-section" aria-labelledby="workflow-title">
         <div class="section-heading">
           <p class="terminal-label">README.md</p>
-          <h2 id="workflow-title">Add yourself in five small steps</h2>
+          <h2 id="workflow-title">Add yourself with GitHub</h2>
+          <p class="section-note">
+            This wall is public. Only add profile details and images you are comfortable sharing online.
+          </p>
+          <p class="section-note">
+            New to Git and GitHub? Joey Salatino made a helper doc:
+            <a href="https://docs.google.com/document/d/1ApBC1iMaxuCOyqeUY_7LNmfz7u80YzHpO3MiB-Jmw2Q/edit?usp=sharing">open the guide</a>.
+          </p>
         </div>
 
         <ol class="workflow-list">
-          <li>Fork or edit the repo</li>
-          <li>Add your JSON file to <code>/members</code></li>
-          <li>Add your file path to <code>members.json</code></li>
-          <li>Open a pull request</li>
-          <li>After it is merged, your card appears here</li>
+          <li>
+            <strong>Get access</strong>
+            <span>Make a GitHub account, then send your username in <code>github-username-drop</code> so we can add you.</span>
+          </li>
+          <li>
+            <strong>Make a branch</strong>
+            <span>After you have access, clone the repo and run <code>git checkout -b add-your-name</code>.</span>
+          </li>
+          <li>
+            <strong>Create your file</strong>
+            <span>Copy <code>members/example-member.json</code> to a new file like <code>members/jane-doe.json</code>.</span>
+          </li>
+          <li>
+            <strong>Edit your profile</strong>
+            <span>Update your JSON with your name, year, major, interests, bio, and optional image in <code>assets/</code>.</span>
+          </li>
+          <li>
+            <strong>Update the list</strong>
+            <span>Open <code>members.json</code> and add your new file path so the site knows your card exists.</span>
+          </li>
+          <li>
+            <strong>Send it for review</strong>
+            <span>Commit, push your branch, and open a pull request. Your card appears after the PR is approved and merged.</span>
+          </li>
         </ol>
       </section>
 

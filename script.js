@@ -15,15 +15,20 @@ async function loadMembers() {
       throw new Error("members.json should be an array of file paths.");
     }
 
-    // Fetch every member file listed in members.json.
-    const members = await Promise.all(
+    // Fetch every member file listed in members.json. If one file path is wrong,
+    // skip that card instead of breaking the whole wall.
+    const memberResults = await Promise.allSettled(
       memberPaths.map((path) => fetchJson(path))
     );
+    const members = memberResults
+      .filter((result) => result.status === "fulfilled")
+      .map((result) => result.value);
+    const failedCount = memberResults.length - members.length;
 
     // Sorting makes the wall stable even when people add files in any order.
     members.sort((a, b) => a.name.localeCompare(b.name));
 
-    renderMembers(members);
+    renderMembers(members, failedCount);
   } catch (error) {
     showError(error);
   }
@@ -39,15 +44,25 @@ async function fetchJson(path) {
   return response.json();
 }
 
-function renderMembers(members) {
+function renderMembers(members, failedCount = 0) {
   memberGrid.innerHTML = "";
 
   if (members.length === 0) {
-    showStatus("No members have been added yet.");
+    showStatus(
+      failedCount > 0
+        ? "No member cards loaded. Check that every path in members.json matches a real file."
+        : "No members have been added yet."
+    );
     return;
   }
 
-  clearStatus();
+  if (failedCount > 0) {
+    showStatus(
+      `${failedCount} member file could not be loaded. Check members.json for a missing or misspelled file path.`
+    );
+  } else {
+    clearStatus();
+  }
 
   members.forEach((member) => {
     const card = document.createElement("article");

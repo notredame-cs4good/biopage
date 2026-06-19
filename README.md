@@ -19,12 +19,33 @@ This site is publicly visible. Only add information and images you are comfortab
 
 ## Add Yourself
 
-1. Fork this repo, or use GitHub's edit button if your club has given you access.
-2. Open `members/example-member.json`.
-3. Copy that file into the same `members` folder.
-4. Rename the copied file using your name, like `members/jane-doe.json`.
-5. Edit the copied file with your own information.
-6. Optional: add a square or landscape profile image to `assets/`.
+Use this workflow if you have access to the repo.
+
+If you are less familiar with Git and GitHub, our incredible Project Coordinator Joey Salatino put together this doc: https://docs.google.com/document/d/1ApBC1iMaxuCOyqeUY_7LNmfz7u80YzHpO3MiB-Jmw2Q/edit?usp=sharing
+
+1. Create a GitHub account if you do not already have one.
+2. Send your GitHub username in the `github-username-drop` channel so we can give you access to the repo.
+3. Wait until you have access.
+4. Sign in to GitHub.
+5. Open this repository.
+6. Click Code and copy the repo URL.
+7. Clone the repo on your computer:
+
+```bash
+git clone REPO_URL_HERE
+cd REPO_FOLDER_HERE
+```
+
+8. Create a new branch for your profile:
+
+```bash
+git checkout -b add-your-name
+```
+
+9. Copy `members/example-member.json` to a new file named with your name, like `members/jane-doe.json`.
+10. Replace the example values with your own information.
+11. Optional: add a square or landscape profile image to the `assets/` folder.
+12. If you added an image, put the image path in your JSON, like `assets/jane-doe.jpg`.
 
 Use this format:
 
@@ -42,8 +63,8 @@ Use this format:
 
 The `image` and `imageAlt` fields are optional. If you add an image, commit the image file with your JSON file and use a relative path like `assets/jane-doe.jpg`.
 
-7. Open `members.json`.
-8. Add your new file path to the list.
+13. Open `members.json`.
+14. Add your new file path to the list.
 
 Example:
 
@@ -56,10 +77,20 @@ Example:
 
 Make sure every line except the last one ends with a comma.
 
-9. Preview the site locally and make sure your card looks right.
-10. Commit your changes.
-11. Open a pull request.
-12. After your pull request is merged, your card will appear on the member wall.
+15. Save your files.
+16. Commit and push your branch:
+
+```bash
+git add .
+git commit -m "Add Jane Doe profile"
+git push -u origin add-your-name
+```
+
+17. Open GitHub. It should show a button to create a pull request from your branch.
+18. Open the pull request for review.
+19. After the pull request is approved and merged, your card will appear on the member wall.
+
+If you cannot clone the repo on your computer, you can still make the same changes through the GitHub website by using Add file and Edit file.
 
 ## Run Locally
 
