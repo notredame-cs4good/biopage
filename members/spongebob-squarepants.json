@@ -1,0 +1,9 @@
+{
+  "name": "SpongeBob SquarePants",
+  "year": "Test User",
+  "major": "Bubbleology",
+  "image": "assets/spongebob-test-avatar.svg",
+  "imageAlt": "Yellow sponge-inspired test avatar",
+  "interests": ["web development", "jellyfishing", "community impact"],
+  "bio": "Testing the new profile image support with maximum enthusiasm."
+}

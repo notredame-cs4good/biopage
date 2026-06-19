@@ -11,7 +11,11 @@ This project uses only plain HTML, CSS, and JavaScript. There is no framework, b
 - `script.js` - loads member files and renders cards
 - `members.json` - lists every member JSON file
 - `members/example-member.json` - starter file to copy
-- `assets/` - logo images used at the top of the page
+- `assets/` - logo images and optional member profile images
+
+## Public Profile Notice
+
+This site is publicly visible. Only add information and images you are comfortable sharing online. Do not include private contact details, student ID numbers, addresses, dorm/location details, or anything sensitive. By opening a pull request, you confirm that you have permission to share the content you added.
 
 ## Add Yourself
 
@@ -20,6 +24,7 @@ This project uses only plain HTML, CSS, and JavaScript. There is no framework, b
 3. Copy that file into the same `members` folder.
 4. Rename the copied file using your name, like `members/jane-doe.json`.
 5. Edit the copied file with your own information.
+6. Optional: add a square or landscape profile image to `assets/`.
 
 Use this format:
 
@@ -28,13 +33,17 @@ Use this format:
   "name": "Example Member",
   "year": "Freshman",
   "major": "Computer Science",
+  "image": "assets/nd-cs4good-monogram.png",
+  "imageAlt": "Example Member profile image",
   "interests": ["web development", "design", "social impact"],
   "bio": "I joined CS4Good because I want to build useful tools for real community partners."
 }
 ```
 
-6. Open `members.json`.
-7. Add your new file path to the list.
+The `image` and `imageAlt` fields are optional. If you add an image, commit the image file with your JSON file and use a relative path like `assets/jane-doe.jpg`.
+
+7. Open `members.json`.
+8. Add your new file path to the list.
 
 Example:
 
@@ -47,9 +56,10 @@ Example:
 
 Make sure every line except the last one ends with a comma.
 
-8. Commit your changes.
-9. Open a pull request.
-10. After your pull request is merged, your card will appear on the member wall.
+9. Preview the site locally and make sure your card looks right.
+10. Commit your changes.
+11. Open a pull request.
+12. After your pull request is merged, your card will appear on the member wall.
 
 ## Run Locally
 
@@ -70,6 +80,14 @@ http://localhost:8000
 ## Deploy
 
 This site can be deployed on Cloudflare Pages, GitHub Pages, or any static hosting service.
+
+For GitHub Pages:
+
+1. Make the GitHub repo public.
+2. Go to the repo's Settings > Pages.
+3. Under Build and deployment, choose Deploy from a branch.
+4. Select the `main` branch and the `/root` folder.
+5. Save. GitHub will publish the site at a `github.io` URL after the first Pages build finishes.
 
 For Cloudflare Pages:
 

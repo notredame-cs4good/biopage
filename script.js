@@ -53,6 +53,15 @@ function renderMembers(members) {
     const card = document.createElement("article");
     card.className = "member-card";
 
+    if (member.image) {
+      const image = document.createElement("img");
+      image.className = "member-image";
+      image.src = member.image;
+      image.alt = member.imageAlt || `${member.name} profile image`;
+      image.loading = "lazy";
+      card.appendChild(image);
+    }
+
     const name = document.createElement("h3");
     name.textContent = member.name;
 
