@@ -226,7 +226,6 @@ code {
   display: block;
   margin-bottom: 18px;
   color: var(--faint);
-  content: "cat member.json";
   font-size: 0.82rem;
 }
 
