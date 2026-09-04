@@ -1,0 +1,9 @@
+{
+  "name": "Kirby Bach",
+  "year": "Junior",
+  "major": "Computer Science",
+  "image": "assets/kirby-bach.jpeg",
+  "imageAlt": "Kirby Bach headshot",
+  "interests": ["web development", "AI", "social impact"],
+  "bio": "I’m the president of CS4Good, and I enjoy building websites and tools that help community organizations."
+}
